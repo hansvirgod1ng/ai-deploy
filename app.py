@@ -1,16 +1,19 @@
 from flask import Flask, request, render_template
 from PIL import Image
 import torch
-from transformers import BlipProcessor, BertTokenizer, BlipImageProcessor, AutoProcessor, BlipConfig
+from transformers import BlipProcessor, BertTokenizer, BlipImageProcessor, AutoProcessor, BlipConfig, BlipForQuestionAnswering
+from transformers import GenerationConfig
 import numpy as np
 
 image_processor = BlipImageProcessor.from_pretrained("Salesforce/blip-vqa-base")
 text_processor = AutoProcessor.from_pretrained("Salesforce/blip-vqa-base")
 config = BlipConfig.from_pretrained("Salesforce/blip-vqa-base")
+# generation_config = GenerationConfig.from_pretrained("Salesforce/blip-vqa-base")
 
 processor = BlipProcessor.from_pretrained("Salesforce/blip-vqa-base")
 tokenizer = BertTokenizer.from_pretrained("Salesforce/blip-vqa-base")
-model = torch.load("model/model.pkl")
+# model = BlipForQuestionAnswering.from_pretrained("Salesforce/blip-vqa-base")
+model2 = torch.load("model/model.pkl")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def preprocess_image(image):
@@ -36,9 +39,7 @@ def predict():
     image_file = request.files['imageFile']
     image_filename = image_file.filename
     image_path = "./images/" + image_filename
-    image_file.save(image_path)
-
- 
+    image_file.save(image_path) 
     question = request.form['question']
 
 
@@ -63,10 +64,9 @@ def predict():
     }
 
     # Make the prediction
-    outputs = model.generate(**input_data)
+    outputs = model2.generate(**input_data)
     print(outputs)
-    print(outputs.last_hidden_state[0][0])
-    predicted_answer = text_processor.decode(outputs.last_hidden_state[0][0], skip_special_tokens=True)
+    predicted_answer = text_processor.decode(outputs[0], skip_special_tokens=True)
     # predicted_answer = text_processor.decode(outputs[0], skip_special_tokens=True)
     print(predicted_answer)
 
