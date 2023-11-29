@@ -1,20 +1,14 @@
 from flask import Flask, request, render_template
 from PIL import Image
 import torch
-from transformers import BlipProcessor, BertTokenizer, BlipImageProcessor, AutoProcessor, BlipConfig, BlipForQuestionAnswering
-from transformers import GenerationConfig
+from transformers import BlipProcessor, BertTokenizer, BlipImageProcessor, AutoProcessor
 import numpy as np
 
 image_processor = BlipImageProcessor.from_pretrained("Salesforce/blip-vqa-base")
 text_processor = AutoProcessor.from_pretrained("Salesforce/blip-vqa-base")
-config = BlipConfig.from_pretrained("Salesforce/blip-vqa-base")
-# generation_config = GenerationConfig.from_pretrained("Salesforce/blip-vqa-base")
-
 processor = BlipProcessor.from_pretrained("Salesforce/blip-vqa-base")
 tokenizer = BertTokenizer.from_pretrained("Salesforce/blip-vqa-base")
-# model = BlipForQuestionAnswering.from_pretrained("Salesforce/blip-vqa-base")
 model2 = torch.load("model/model.pkl")
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def preprocess_image(image):
     # Resize the image to the expected size
@@ -78,29 +72,3 @@ def predict():
 
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
-
-
-
-   # Process the image
-    # # Load the image using PIL
-    # image = Image.open(image_path).convert('RGB')
-
-    # inputs = processor(image, question, return_tensors="pt")
-    # pixel_values = inputs['pixel_values']
-    # input_ids = inputs['input_ids']
-    # decoder_input_ids = tokenizer(question, return_tensors="pt").input_ids
-
-    # # Forward pass
-    # outputs = model.generate(**inputs)
-    # predicted_answer = processor.decode(outputs[0], skip_special_tokens=True)
-    # image = Image.open(image_path)
-    # preprocessed_image = preprocess_image(image)
-    # image_tensor = torch.tensor(preprocessed_image).unsqueeze(0).to(device)
-    # inputs = processor(image, question, return_tensors="pt")
-    # input_data = {
-    # 'pixel_values': preprocessed_image.unsqueeze(0).to(device),  # Assuming 'device' is the target device
-    # 'input_ids': inputs['input_ids'].to(device)
-    # }
-    # outputs = model.generate(**input_data)
-    # predicted_answer = processor.decode(outputs[0], skip_special_tokens=True)
-    # print(predicted_answer)
