@@ -43,29 +43,28 @@ def predict():
     image_encoding = image_processor(image, do_resize=True, size=(128, 128), return_tensors="pt")
 
     # Process the question
-    encoding = text_processor(None, question, padding="max_length", truncation=True, max_length=32, return_tensors="pt")
-    for k, v in encoding.items():
-        encoding[k] = v.squeeze()
+    # encoding = text_processor(None, question, padding="max_length", truncation=True, max_length=32, return_tensors="pt")
+    # for k, v in encoding.items():
+    #     encoding[k] = v.squeeze()
 
     inputs = processor(image, question, return_tensors="pt")
-    decoder_input_ids = tokenizer(question, return_tensors="pt").input_ids
+    encoding = tokenizer(question, return_tensors="pt")
     # Prepare the input for the model
     input_data = {
         "pixel_values": image_encoding["pixel_values"],
         "input_ids": encoding["input_ids"],
-        **inputs,
         # "decoder_input_ids": decoder_input_ids
     }
 
     # Make the prediction
     outputs = model2.generate(**input_data)
     print(outputs)
-    predicted_answer = text_processor.decode(outputs[0], skip_special_tokens=True)
+    predicted_answer = processor.decode(outputs[0], skip_special_tokens=True)
     # predicted_answer = text_processor.decode(outputs[0], skip_special_tokens=True)
     print(predicted_answer)
 
     # Return the predicted answer to the user interface
-    return render_template('index.html')
+    return render_template('index.html', answer=predicted_answer)
     
 
 

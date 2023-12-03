@@ -32,6 +32,9 @@
                     </button>
                 </div>
             </form>
+            {% if answer %}
+            <p>Predicted Answer : The Answer maybe is {{answer}}</p>
+            {% endif %}
         </div>
     </body>
 </html>
