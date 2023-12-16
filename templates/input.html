@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>MediSight</title>
+        <style>
+            * {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="h-screen bg-[#F8ECFF]">
+            <!-- Navbar -->
+            <div class="flex justify-between items-center h-20 px-16">
+                <!-- Logo -->
+                <a href="/" class="font-bold text-lg text-[#331181]"
+                    >MediSight.AI</a
+                >
+                <!-- Links -->
+                <li class="list-none space-x-4">
+                    <a
+                        href="/#howItWorks"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >How it works</a
+                    >
+                    <a
+                        href="/#model"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >Model</a
+                    >
+                    <a
+                        href="/members"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >Members</a
+                    >
+                    <a
+                        href="/input"
+                        class="px-6 py-3 bg-[#331181] text-white rounded-full hover:bg-[#714cc7]"
+                        >Get Started</a
+                    >
+                </li>
+            </div>
+
+            <section
+                id="model"
+                class="h-[calc(100vh-5rem)] p-16 bg-[#F8ECFF] relative flex justify-center"
+            >
+                <div
+                    class="flex flex-col bg-white rounded-xl shadow-md py-4 px-12 justify-around"
+                >
+                    <form
+                        class="w-full flex flex-col space-y-16"
+                        action="/input"
+                        method="post"
+                        enctype="multipart/form-data"
+                    >
+                        <h1 class="font-semibold text-xl">
+                            Upload your image and ask your question:
+                        </h1>
+                        <input
+                            type="file"
+                            name="imageFile"
+                            accept="image/*"
+                            class="bg-[#F8ECFF] p-2"
+                        />
+                        <div
+                            class="flex items-center border-b border-[#331181] py-2"
+                        >
+                            <input
+                                class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                                type="text"
+                                name="question"
+                                placeholder="Is this ..?"
+                                aria-label="Full name"
+                            />
+                            <button
+                                class="flex-shrink-0 bg-[#331181] hover:bg-[#714cc7] text-sm text-white py-2 px-6 rounded"
+                                type="submit"
+                            >
+                                Predict
+                            </button>
+                        </div>
+                    </form>
+                    {% if answer %}
+                    <p>Predicted Answer : The Answer maybe is {{answer}}</p>
+                    {% endif %}
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

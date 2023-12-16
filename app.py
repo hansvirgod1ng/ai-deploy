@@ -26,9 +26,18 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template("index.html")
+    return render_template("home.html")
 
-@app.route('/', methods=['POST'])
+@app.route('/members', methods=['GET'])
+def members():
+    return render_template("members.html")
+
+@app.route('/input', methods=['GET'])
+def input():
+    return render_template("input.html")
+
+
+@app.route('/input', methods=['POST'])
 def predict():
     image_file = request.files['imageFile']
     image_filename = image_file.filename
@@ -64,7 +73,7 @@ def predict():
     print(predicted_answer)
 
     # Return the predicted answer to the user interface
-    return render_template('index.html', answer=predicted_answer)
+    return render_template('input.html', answer=predicted_answer)
     
 
 

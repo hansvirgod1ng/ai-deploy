@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>MediSight</title>
+        <style>
+            * {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="h-screen bg-[#F8ECFF]">
+            <!-- Navbar -->
+            <div class="flex justify-between items-center h-20 px-16">
+                <!-- Logo -->
+                <a href="/" class="font-bold text-lg text-[#331181]"
+                    >MediSight.AI</a
+                >
+                <!-- Links -->
+                <li class="list-none space-x-4">
+                    <a
+                        href="#howItWorks"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >How it works</a
+                    >
+                    <a
+                        href="#model"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >Model</a
+                    >
+                    <a
+                        href="/members"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >Members</a
+                    >
+                    <a
+                        href="/input"
+                        class="px-6 py-3 bg-[#331181] text-white rounded-full hover:bg-[#714cc7]"
+                        >Get Started</a
+                    >
+                </li>
+            </div>
+
+            <!-- Main hero Section -->
+            <section
+                id="hero"
+                class="flex h-[calc(100%-5rem)] items-center px-16"
+            >
+                <!-- Left -->
+                <div class="flex flex-1 flex-col space-y-6">
+                    <h1
+                        class="font-semibold text-[#331181] text-6xl leading-tight"
+                    >
+                        Transforming the way you access and understand medical
+                        knowledge
+                    </h1>
+                    <p class="text-lg">
+                        Welcome to MediSight AI, the innovative solution that
+                        combines medical expertise with artificial intelligence
+                        to provide you with comprehensive insights
+                    </p>
+                    <div class="flex space-x-8 py-4">
+                        <a
+                            href="/input"
+                            class="px-6 py-3 bg-[#331181] text-white rounded-full hover:bg-[#714cc7]"
+                            >Get Started</a
+                        >
+                        <a
+                            href="#howItWorks"
+                            class="px-6 py-3 bg-white rounded-full border border-white hover:border-[#331181]"
+                            >About Us</a
+                        >
+                    </div>
+                </div>
+                <!-- Right -->
+                <div class="flex flex-1 justify-center px-16 h-full">
+                    <img
+                        src="{{ url_for('static', filename='/images/doctor-woman.png') }}"
+                        alt="med_img"
+                        class="rounded-3xl h-full object-cover"
+                    />
+                </div>
+            </section>
+
+            <!-- How it works -->
+            <section id="howItWorks" class="h-screen p-16">
+                <div class="flex items-center h-full">
+                    <div class="flex-col flex-1 space-y-4">
+                        <h1 class="text-3xl font-semibold">
+                            Medical Visual Question Answering
+                        </h1>
+                        <p class="max-w-[75%]">
+                            By combining medical expertise with artificial
+                            intelligence, AI systems like MediSight can answer
+                            medical questions more efficiently, revolutionizing
+                            the way users access and understand medical
+                            knowledge
+                        </p>
+                    </div>
+                    <div class="flex flex-1 flex-col">
+                        <p>
+                            MediSight works by processing and analyzing images
+                            and text to provide accurate and comprehensive
+                            medical information. When a user inputs an image and
+                            a text question about medical topics, the AI model
+                            leverages its pre-trained knowledge and advanced
+                            algorithms to understand the context and provide a
+                            relevant answer. This process involves several
+                            steps:
+                        </p>
+                        <ul class="py-8 space-y-4">
+                            <li class="flex space-x-4">
+                                <p
+                                    class="p-4 bg-[#714cc7] text-white rounded-full"
+                                >
+                                    1
+                                </p>
+                                <p
+                                    class="underline underline-offset-4 decoration-[#714cc7]"
+                                >
+                                    The AI model encodes the image and text
+                                    question into a format that can be processed
+                                    and understood by the system
+                                </p>
+                            </li>
+                            <li class="flex space-x-4">
+                                <p
+                                    class="p-4 bg-[#714cc7] text-white rounded-full"
+                                >
+                                    2
+                                </p>
+                                <p
+                                    class="underline underline-offset-4 decoration-[#714cc7]"
+                                >
+                                    The model uses its pre-trained knowledge to
+                                    identify relevant information from the
+                                    encoded image and text
+                                </p>
+                            </li>
+                            <li class="flex space-x-4">
+                                <p
+                                    class="p-4 bg-[#714cc7] text-white rounded-full"
+                                >
+                                    3
+                                </p>
+                                <p
+                                    class="underline underline-offset-4 decoration-[#714cc7]"
+                                >
+                                    The system communicates its findings using
+                                    multiple modalities, providing both text
+                                    answers and dynamically annotated images
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model -->
+            <section id="model" class="h-screen p-16 bg-[#F8ECFF] relative">
+                <div class="absolute bottom-10">
+                    <h1 class="text-9xl font-black text-[#331181]/20">
+                        BLIP Model
+                    </h1>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <p class="font-semibold text-lg">
+                        MediSight's driven by
+                        <span
+                            class="underline underline-offset-4 decoration-[#331181]"
+                            >BLIP Model</span
+                        >
+                    </p>
+                    <p>
+                        The BLIP model was proposed in BLIP: Bootstrapping
+                        Language-Image Pre-training for Unified Vision-Language
+                        Understanding and Generation by Junnan Li, Dongxu Li,
+                        Caiming Xiong, Steven Hoi.
+                    </p>
+                    <p>
+                        The BLIP (Bootstrapping Language-Image Pre-training)
+                        model is a cutting-edge pre-training framework for
+                        unified vision-language understanding and generation. It
+                        achieves state-of-the-art results on various
+                        vision-language tasks, including visual question
+                        answering, image-text retrieval, and image captioning.
+                        BLIP is jointly pre-trained with three vision-language
+                        objectives: image-text contrastive learning, image-text
+                        matching, and image-text generation, making it a
+                        versatile and powerful model for multimodal tasks.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Getback -->
+            <section class="h-screen p-16 relative">
+                <div class="flex flex-col items-center h-full space-y-12">
+                    <h1 class="text-[#331181] font-semibold text-5xl">
+                        Try MediSight today.
+                    </h1>
+                    <p class="max-w-[50%] text-center">
+                        Discover MediSight, the AI solution that combines
+                        medical expertise with advanced vision-language
+                        understanding, revolutionizing the way you access and
+                        comprehend medical knowledge through image and text
+                        input.
+                    </p>
+                    <div class="flex space-x-8 py-4">
+                        <a
+                            href="/input"
+                            class="px-6 py-3 bg-[#331181] text-white rounded-full hover:bg-[#714cc7]"
+                            >Get Started</a
+                        >
+                        <a
+                            href="#"
+                            class="px-6 py-3 bg-white rounded-full border border-[#331181] hover:border-white hover:text-white hover:bg-[#331181]"
+                            >About Us</a
+                        >
+                    </div>
+                    <img
+                        src="{{ url_for('static', filename='/images/brain.webp') }}"
+                        alt="brain"
+                        class="w-[50%] h-full rounded-t-3xl overflow-hidden object-cover"
+                    />
+                </div>
+                <div
+                    class="w-96 h-96 bg-gradient-to-tr from-[#331181]/75 to-[#714cc7]/25 blur rounded-full absolute bottom-5 left-6"
+                ></div>
+                <div
+                    class="w-48 h-48 bg-gradient-to-tr from-[#331181]/75 to-[#714cc7]/25 blur rounded-full absolute top-5 right-10"
+                ></div>
+            </section>
+
+            <!-- Footer -->
+            <section
+                id="footer"
+                class="h-[calc(100vh-50%)] p-16 bg-[#F8ECFF] relative"
+            >
+                <div class="absolute bottom-10 right-10">
+                    <h1 class="text-9xl font-black text-[#331181]/20">
+                        MediSight
+                    </h1>
+                </div>
+                <div class="flex flex-col space-y-4 h-full justify-center">
+                    <a href="#" class="font-bold text-lg text-[#331181]"
+                        >MediSight.AI</a
+                    >
+                    <p class="max-w-[40%]">
+                        Innovative solution that combines medical expertise with
+                        artificial intelligence to provide you with
+                        comprehensive insights
+                    </p>
+                    <p>Copyright &copy; 2023 MediSight.</p>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>MediSight</title>
+        <style>
+            * {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="h-screen bg-[#F8ECFF]">
+            <!-- Navbar -->
+            <div class="flex justify-between items-center h-20 px-16">
+                <!-- Logo -->
+                <a href="/" class="font-bold text-lg text-[#331181]"
+                    >MediSight.AI</a
+                >
+                <!-- Links -->
+                <li class="list-none space-x-4">
+                    <a
+                        href="/#howItWorks"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >How it works</a
+                    >
+                    <a
+                        href="/#model"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >Model</a
+                    >
+                    <a
+                        href="/members"
+                        class="hover:underline underline-offset-4 decoration-[#331181]"
+                        >Members</a
+                    >
+                    <a
+                        href="/input"
+                        class="px-6 py-3 bg-[#331181] text-white rounded-full hover:bg-[#714cc7]"
+                        >Get Started</a
+                    >
+                </li>
+            </div>
+
+            <!-- Members #1 Section -->
+            <section
+                id="model"
+                class="h-[calc(100vh-5rem)] py-8 px-16 bg-[#F8ECFF] relative"
+            >
+                <div class="absolute bottom-8">
+                    <h1 class="text-9xl font-black text-[#331181]/20">
+                        Founders of MediSight
+                    </h1>
+                </div>
+                <div class="flex justify-around">
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">Hansvirgo</h1>
+                            <h3>2131031</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">Jevin Leon</h1>
+                            <h3>2131032</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">
+                                Jonathan Wijaya
+                            </h1>
+                            <h3>2131102</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">Sunoto</h1>
+                            <h3>2131077</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Members #2 Section -->
+            <section id="model" class="h-screen p-16 bg-white relative">
+                <div class="absolute bottom-8">
+                    <h1 class="text-9xl font-black text-slate-700/20">
+                        Founders of MediSight
+                    </h1>
+                </div>
+                <div class="flex justify-around">
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">
+                                Winson Kennedy
+                            </h1>
+                            <h3>2131027</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">Hin Vi To</h1>
+                            <h3>2131094</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">Jesselyn</h1>
+                            <h3>2131021</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">
+                                Henry Yono Zhang
+                            </h1>
+                            <h3>2131074</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Members #3 Section -->
+            <section id="model" class="h-screen p-16 bg-[#F8ECFF] relative">
+                <div class="absolute bottom-8">
+                    <h1 class="text-9xl font-black text-[#331181]/20">
+                        Founders of MediSight
+                    </h1>
+                </div>
+                <div class="flex justify-around">
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">
+                                Robbi Zulcharnain
+                            </h1>
+                            <h3>2010651076</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">
+                                Nur Syafiqah Binti Shamsudin
+                            </h1>
+                            <h3>B032210207</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y w-64 h-96 bg-white border rounded-b-3xl shadow"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+                            alt="prof-pic"
+                        />
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-lg">
+                                Nur Fathehah Binti Mohd Aris
+                            </h1>
+                            <h3>B032210139</h3>
+                            <img
+                                src="{{ url_for('static', filename='/images/uib.png') }}"
+                                alt="uib"
+                                class="w-16 h-16 object-contain rounded-xl"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
